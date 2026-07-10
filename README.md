@@ -26,3 +26,6 @@ mantener un historial organizado de todas las solicitudes.
 - Google Sheets
 - GitHub
 ---
+
+
+![Flujo de TutorBot](n8n.png)
