@@ -11,3 +11,18 @@ sistema guía al usuario paso a paso, busca un tutor disponible según la materi
 tutoría y envía las notificaciones correspondientes.
 El objetivo principal es reducir el tiempo de asignación de tutorías, evitar conflictos de horarios y
 mantener un historial organizado de todas las solicitudes.
+---
+# Objetivos
+- Automatizar el proceso de asignación de tutorías.
+- Gestionar las solicitudes desde Telegram.
+- Buscar automáticamente tutores disponibles.
+- Evitar reservas duplicadas.
+- Registrar toda la información en Google Sheets.
+- Facilitar el seguimiento de las tutorías.
+---
+# Tecnologías Utilizadas
+- n8n
+- Telegram Bot API
+- Google Sheets
+- GitHub
+---
