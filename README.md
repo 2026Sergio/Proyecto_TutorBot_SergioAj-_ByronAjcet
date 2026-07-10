@@ -27,5 +27,4 @@ mantener un historial organizado de todas las solicitudes.
 - GitHub
 ---
 
-
-![Flujo de TutorBot](n8n.png)
+![alt text](image.png)
