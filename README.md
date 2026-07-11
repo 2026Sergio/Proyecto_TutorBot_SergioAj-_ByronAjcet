@@ -27,4 +27,6 @@ mantener un historial organizado de todas las solicitudes.
 - GitHub
 ---
 
+## flujo visual ya terminado
+
 ![alt text](image.png)
