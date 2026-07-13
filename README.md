@@ -29,7 +29,7 @@ mantener un historial organizado de todas las solicitudes.
 
 ## flujo visual ya terminado
 
-![alt text](image-1.png)
+![Flujo TutorBot](imagenes/evidencia.png)
 
 ## base de datos:
 
