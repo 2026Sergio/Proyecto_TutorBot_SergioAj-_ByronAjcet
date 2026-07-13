@@ -29,4 +29,24 @@ mantener un historial organizado de todas las solicitudes.
 
 ## flujo visual ya terminado
 
-![alt text](image.png)
+![alt text](image-1.png)
+
+## base de datos:
+
+Tutores
+
+https://docs.google.com/spreadsheets/d/1zM8KZtOvX57EZIl6D4l--yZ_Zpk4DpurjYXPvCsMBlg/edit?usp=drive_link
+
+
+Tutorias
+
+https://docs.google.com/spreadsheets/d/1INPRuGKYZb_5P56MlgDwXmW3ZWTONryooInp92CdFa8/edit?usp=drive_link
+
+Seciones
+
+https://docs.google.com/spreadsheets/d/15WiIE4uMwuuZ23Tqkn2D5ypwuurc6EZFHUB7bJa-KWk/edit?usp=drive_link
+
+Estudiantes
+
+https://docs.google.com/spreadsheets/d/1zM8KZtOvX57EZIl6D4l--yZ_Zpk4DpurjYXPvCsMBlg/edit?usp=drive_link
+
