@@ -41,4 +41,3 @@ El sistema utiliza las siguientes hojas para mantener la integridad de los datos
 4. Activa el workflow en n8n y comienza a interactuar con tu bot en Telegram.
 
 ---
-*Desarrollado para la gestión eficiente de tutorías académicas.*
