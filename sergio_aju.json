@@ -1467,8 +1467,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        -1792,
-        -1936
+        -1392,
+        -2032
       ],
       "id": "bdaa9e45-856c-4415-8f8c-01d687a5c698",
       "name": "Send a text message12",
@@ -1523,8 +1523,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        -2096,
-        -1952
+        -1616,
+        -1808
       ],
       "id": "9067c4dd-615f-4865-a3ff-a66684419602",
       "name": "Asistencias",
@@ -1553,10 +1553,102 @@
       "typeVersion": 3.4,
       "position": [
         -2256,
-        -1936
+        -1952
       ],
       "id": "0b826337-e65b-46a6-8535-2f5ed357542f",
       "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1952,
+        -1568
+      ],
+      "id": "37813fd7-19a6-49ec-9a54-d287f4a5fb79",
+      "name": "Code in JavaScript4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Actua como una persona de aissitencia y quiero que cumplas con estos requeriminentos, que guardes en la hora de estudiantes, si ya cumplio con las asistencias, en caso sea asi, necesito que le agreges 10 puntos, por asistencia en la materia del estudiante. ",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2048,
+        -1952
+      ],
+      "id": "4a5d7c03-9903-48ee-ad27-130e51060f8c",
+      "name": "AI Agent5"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -2096,
+        -1744
+      ],
+      "id": "c445985b-cda7-458d-9ea3-9571260ebec4",
+      "name": "Google Gemini Chat Model5",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "lIY1ajV1dmLOLeK5",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1KmZp_4fRlRNMm7aN6KRqnnqIACTLXASidQXzhZfcyAI",
+          "mode": "list",
+          "cachedResultName": "Ver mis puntos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KmZp_4fRlRNMm7aN6KRqnnqIACTLXASidQXzhZfcyAI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KmZp_4fRlRNMm7aN6KRqnnqIACTLXASidQXzhZfcyAI/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -1856,
+        -1760
+      ],
+      "id": "18482a45-3f3a-48c6-9f6a-233253fda970",
+      "name": "Get row(s) in sheet in Google Sheets2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SXmbRk4U8a8b962G",
+          "name": "Google Sheets account 6"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        -1984,
+        -1760
+      ],
+      "id": "ba1d09e1-fe1f-40db-97e6-79d105160c0d",
+      "name": "Simple Memory"
     }
   ],
   "pinData": {},
@@ -2120,8 +2212,68 @@
       "main": [
         [
           {
+            "node": "Code in JavaScript4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript4": {
+      "main": [
+        [
+          {
             "node": "Asistencias",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent5": {
+      "main": [
+        [
+          {
+            "node": "Send a text message12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "ai_memory",
             "index": 0
           }
         ]
@@ -2136,7 +2288,7 @@
     "timeSavedMode": "fixed",
     "callerPolicy": "workflowsFromSameOwner"
   },
-  "versionId": "bf9ebcf2-f284-44b4-b573-559a2f6e373f",
+  "versionId": "c03443b5-0c5f-495c-bc60-140606ab15a7",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "9e744d3425a9b3c85210c8b3d06964d6e7f986c14f53db8ce7780bddc28eae83"

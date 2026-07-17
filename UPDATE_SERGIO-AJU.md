@@ -29,6 +29,6 @@ Entregables Comunes
 
 flujo ya terminado sobre de sistema de puntos por cumplimiento.
 
-![alt text](image.png)
+![alt text](image-2.png)
 
 ![alt text](image-1.png)
